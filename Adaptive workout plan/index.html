@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Workout Plan</title>
+    <!-- Link to the CSS file -->
+    <link href="styles.css" rel="stylesheet">
+    <!-- Link to activate Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<!-- The background of the body will have a light grey color -->
+<body class="bg-gray-100">
+    <!--
+    The "container" class is used to set a max-width for the content, auto-adjusting based on the screen size.
+    "mx-auto" is used to horizontally center the content.
+    "p-4" is used to add some padding around the content.
+    -->
+    <div class="container mx-auto p-4">
+        <!--
+        This is the title of the page. The style of the title will be big, bold, centered and have a margin-bottom of 8px.
+        -->
+        <h1 class="text-3xl font-bold text-center mb-8">Adaptive Workout Plan</h1>
+
+        <!--
+        Workout selection div.
+        We give it an "id" so that it can be accessed later.
+        Class properties makes the div flex, centers the content horizontally, and adds some padding around the content.
+        -->
+        <div id="selection-container" class="flex justify-center space-x-4 mb-8">
+            <!--
+            Workout options.
+            We also give them an "id" so that they can be accessed later.
+            The class properties 
+            -->
+            <div id="cardio" class="w-1/4 p-8 bg-white shadow-md cursor-pointer text-center workout-option">
+                <img src="path/to/cardio.jpg" alt="Cardio" class="w-full h-40 object-cover mb-4">
+                <h2 class="text-xl font-bold">Cardio</h2>
+            </div>
+            <div id="gym" class="w-1/4 p-8 bg-white shadow-md cursor-pointer text-center workout-option">
+                <img src="path/to/gym.jpg" alt="Gym Workout" class="w-full h-40 object-cover mb-4">
+                <h2 class="text-xl font-bold">Gym Workout</h2>
+            </div>
+            <div id="home" class="w-1/4 p-8 bg-white shadow-md cursor-pointer text-center workout-option">
+                <img src="path/to/home.jpg" alt="Home Workout" class="w-full h-40 object-cover mb-4">
+                <h2 class="text-xl font-bold">Home Workout</h2>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result" class="text-center hidden">
+            <p id="selected-choices" class="text-lg font-semibold mb-4"></p>
+            <button id="download-button" class="px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700">Download Workout Plan</button>
+            <button id="restart-button" class="px-4 py-2 ml-4 bg-gray-500 text-white font-bold rounded hover:bg-gray-700">Restart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

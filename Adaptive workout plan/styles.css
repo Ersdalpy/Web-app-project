@@ -1,0 +1,19 @@
+/* Custom styles */
+.selected {
+    background-color: #4CAF50; /* Green background when selected */
+    color: white;              /* White text color */
+    border: 2px solid #4CAF50; /* Add a border to highlight the selection */
+}
+
+.workout-option {
+    height: 100%; /* Make the workout option containers taller */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.workout-option:hover {
+    background-color: #e2e8f0; /* Change color on hover */
+}
