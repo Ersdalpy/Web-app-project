@@ -39,7 +39,7 @@
 /* Center the entire workout and difficulty container */
 .workout-difficulty-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
