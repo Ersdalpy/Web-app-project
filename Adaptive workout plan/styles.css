@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-/* Apply hover effect when the .hover-scale class is present */
+/* Hover effect for elements with the .hover-scale class */
 .hover-scale:hover {
     transform: scale(1.05);
 }
@@ -24,7 +24,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(1, 65, 30, 0.2);
     color: white;
     text-align: center;
     padding: 0.5rem;
@@ -36,13 +36,27 @@
     display: none;
 }
 
+#selection-container {
+    padding-top: 50px;
+}
+
 /* Center the entire workout and difficulty container */
 .workout-difficulty-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 50px; /* Space between workout and difficulty sections */
+    position: relative;
+}
+
+.difficulty-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Translate to perfect center */
 }
 
 .difficulty-option {
@@ -51,15 +65,26 @@
     height: 40px;
     border-radius: 12px;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 10px;
+    color: white;
+    font-weight:500;
 }
 
-/* Apply hover effect when the .hover-scale class is present */
-.difficulty-option.hover-scale:hover {
-    transform: scale(1.05);
+.difficulty-option:nth-child(1) {
+    background-color: rgba(192, 250, 192, 0.9);
+}
+
+.difficulty-option:nth-child(2) {
+    background-color: rgba(220, 240, 148, 0.9);
+}
+
+.difficulty-option:nth-child(3) {
+    background-color: rgba(226, 141, 141, 0.9);
 }
 
 /* Layout for small screens */
@@ -72,6 +97,13 @@
 
     .workout-difficulty-container {
         flex-direction: column;
+    }
+
+    .difficulty-container {
+        flex-direction: row; /* Change to row for mobile view */
+        justify-content: center; /* Center the difficulty buttons */
+        gap: 10px; /* Space between buttons */
+        width: 100%; /* Ensure container takes full width */
     }
 
     .difficulty-option {

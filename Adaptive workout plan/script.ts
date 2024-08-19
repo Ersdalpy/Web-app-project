@@ -14,6 +14,9 @@ function handleWorkoutSelection(event: Event) {
             <h2>${selectedWorkout}</h2>
         `;
 
+        // Remove the hover-scale class to prevent scaling
+        selectedDiv.classList.remove('hover-scale');
+
         // Append selected workout
         selectionContainer.appendChild(selectedDiv);
 
@@ -49,7 +52,7 @@ function handleIntensitySelection(workoutType: string, intensity: string) {
 
         // Display selected workout and intensity
         const resultDiv = document.createElement('div');
-        resultDiv.className = 'workout-option'; // No hover-scale class here
+        resultDiv.className = 'workout-option';
         resultDiv.innerHTML = `
             <img src="./Pictures/${workoutType.replace(" ", "")}Workout.jpg" alt="${workoutType}">
             <h2>${workoutType}</h2>
@@ -64,11 +67,15 @@ function handleIntensitySelection(workoutType: string, intensity: string) {
 
         difficulties.forEach(level => {
             const difficultyDiv = document.createElement('div');
-            difficultyDiv.className = 'difficulty-option'; // No hover-scale class here
+            difficultyDiv.className = 'difficulty-option';
             difficultyDiv.textContent = level;
+
             if (level === intensity) {
                 difficultyDiv.classList.add('bg-green-300'); // Highlight selected difficulty
+            } else {
+                difficultyDiv.classList.add('hidden'); // Hide other difficulties
             }
+
             difficultyContainer.appendChild(difficultyDiv);
         });
 
@@ -81,6 +88,7 @@ function handleIntensitySelection(workoutType: string, intensity: string) {
         }
     }
 }
+
 
 // Attach event listeners to workout type buttons
 document.querySelectorAll('.workout-option').forEach(button => {
