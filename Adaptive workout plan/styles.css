@@ -7,6 +7,11 @@
     background-color: white;
     border-radius: 12px;
     overflow: hidden;
+    opacity: 0.85;
+}
+
+.workout-option:hover {
+    opacity: 1.0;
 }
 
 /* Hover effect for elements with the .hover-scale class */
@@ -61,7 +66,7 @@
 
 .difficulty-option {
     background-color: #f8f8f8;
-    width: 150px;
+    width: 200px;
     height: 40px;
     border-radius: 12px;
     display: flex;
@@ -86,6 +91,7 @@
 .difficulty-option:nth-child(3) {
     background-color: rgba(226, 141, 141, 0.9);
 }
+
 
 /* Layout for small screens */
 @media (max-width: 767px) {
