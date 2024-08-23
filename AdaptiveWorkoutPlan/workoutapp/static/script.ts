@@ -6,11 +6,14 @@ function handleWorkoutSelection(event: Event) {
     if (selectionContainer) {
         selectionContainer.innerHTML = ''; // Clear current content
 
+        // Generate the correct image path using Django's static URL structure
+        const imagePath = `${window.location.origin}/static/pictures/${selectedWorkout.replace(/\s/g, '')}Workout.jpg`;
+
         // Create the selected workout div
         const selectedDiv = document.createElement('div');
         selectedDiv.className = 'workout-option hover-scale'; // Add hover-scale class here
         selectedDiv.innerHTML = `
-            <img src="./Pictures/${selectedWorkout.replace(/\s/g, '')}Workout.jpg" alt="${selectedWorkout}">
+            <img src="${imagePath}" alt="${selectedWorkout}">
             <h2>${selectedWorkout}</h2>
         `;
 
@@ -50,11 +53,14 @@ function handleIntensitySelection(workoutType: string, intensity: string) {
     if (selectionContainer) {
         selectionContainer.innerHTML = ''; // Clear current content
 
+        // Generate the correct image path using Django's static URL structure
+        const imagePath = `${window.location.origin}/static/Pictures/${workoutType.replace(" ", "")}Workout.jpg`;
+
         // Display selected workout and intensity
         const resultDiv = document.createElement('div');
         resultDiv.className = 'workout-option';
         resultDiv.innerHTML = `
-            <img src="./Pictures/${workoutType.replace(" ", "")}Workout.jpg" alt="${workoutType}">
+            <img src="${imagePath}" alt="${workoutType}">
             <h2>${workoutType}</h2>
         `;
         selectionContainer.appendChild(resultDiv);
@@ -85,6 +91,11 @@ function handleIntensitySelection(workoutType: string, intensity: string) {
         const resultSection = document.getElementById('result');
         if (resultSection) {
             resultSection.classList.remove('hidden');
+
+            // Update the download button with the correct plan link
+            const downloadButton = document.getElementById('download-button');
+            const fileName = `${intensity}_${workoutType.replace(/\s/g, '')}_Workout.pdf`;
+            downloadButton?.setAttribute('href', `${window.location.origin}/static/plans/${fileName}`);
         }
     }
 }

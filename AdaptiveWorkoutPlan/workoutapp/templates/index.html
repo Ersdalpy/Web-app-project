@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Workout Plan</title>
+
+    <!-- This loads Django's 'static' template tag library, allowing us to use 'static' to reference our static files like JS, CSS and pictures. -->
+    {% load static %}
+
+    <!-- Link to the CSS file, called using the 'static' tag to ensure the correct path is used. -->
+    <link href="{% static 'styles.css' %}" rel="stylesheet">
+
+    <!-- Link to activate Tailwind CSS framework, used to style the page with utility-first classes -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<!-- The body of the page, which contains the content of the HTML document. It is styled with a light green color.
+ It is set to relative, making sure children elements will position based on the body's position.
+ Lastly, 'min-h-screen' ensures that the body takes at a minimum the full heigth of the page. -->
+<body class="bg-green-100 relative min-h-screen">
+    
+    <!-- This div sets the background image for the entire page through the url, also using 'static' to ensure correct path.
+    'absolute inset-0': Positions the div absolutely to its relative, and are covering the entire viewport.
+    'bg-cover', 'bg-center': Ensures that the background image covers the entire div without stretching, centering the image.
+    'opacity-50': This is making the background image 50% transparent, allowing some of the light green color to show through. -->
+    <div class="absolute inset-0 bg-cover bg-center opacity-50" style="background-image: url('{% static 'pictures/WorkoutBackground.jpg' %}');"></div>
+
+    <!-- Content Container.
+    'relative': We make the div relative so that its child elements is positioned with respect to this div.
+    'p-4': Adds some padding to the container -->
+    <div class="relative p-4">
+
+        <!-- The visible header of the page.
+         Style: big, bold, centered, top and bottom margin, white text -->
+        <h1 class="text-3xl font-bold text-center mt-2 mb-8 text-white">Adaptive Workout Plan</h1>
+
+        <!-- Workout Selection / Difficulty Selection.
+        The div is provided an unique id so that the static files can interact with this element..
+        'class' is used to apply Tailwind CSS styling.
+        'flex flex-col md:flex-row': Here we use flexbox for layout, stacking selection containers vertically on small screens and horizontally on larger screens.
+        'justify-center': Centers the items horizontally
+        'space-y-4 md:space-y-0 md:space-x-4': This adds vertical space between the items on small screens and horizontal space on larger screens.
+        'mb-8': Bottom padding -->
+        <div id="selection-container" class="font-semibold flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-8">
+
+            <!-- Cardio container
+            Unique id so it can be reached by the static files. Also a class to make styling simplified. -->
+            <div id="cardio" class="workout-option">
+
+                <!-- Providing the static link to the prefered picture, also giving it a alt text which is shown incase of picture not showing up. -->
+                <img src="{% static 'pictures/CardioWorkout.jpg' %}" alt="Cardio">
+
+                <!-- Small text at the bottom of the selection container. -->
+                <h2>Cardio</h2>
+            </div>
+
+            <!-- Gym container
+            Unique id so it can be reached by the static files. Also a class to make styling simplified. -->
+            <div id="gym" class="workout-option">
+
+                <!-- Providing the static link to the prefered picture, also giving it a alt text which is shown incase of picture not showing up. -->
+                <img src="{% static 'pictures/GymWorkout.jpg' %}" alt="Gym">
+
+                <!-- Small text at the bottom of the selection container. -->
+                <h2>Gym</h2>
+            </div>
+
+            <!-- Home workout container
+            Unique id so it can be reached by the static files. Also a class to make styling simplified. -->
+            <div id="home" class="workout-option">
+
+                <!-- Providing the static link to the prefered picture, also giving it a alt text which is shown incase of picture not showing up. -->
+                <img src="{% static 'pictures/HomeWorkout.jpg' %}" alt="Home">
+
+                <!-- Small text at the bottom of the selection container. -->
+                <h2>Home</h2>
+            </div>
+        </div>
+
+        <!-- Result Section.
+        Unique id so it can be reached by static files.
+        'text-center': Centers the text
+        'hidden': Makes the div invisible, we will change the visibility with scripting later.-->
+        <div id="result" class="text-center hidden">
+            
+            <!-- Download button and Restart button.
+            'px-4 py-2 rounded': Adds some padding to the buttons, and makes the corners rounded.
+            'bg-color-123': Background color of the buttons, low number equals light color, high number equals strong color.
+            'text-white font-bold': White and bold text.
+            'hover: bg-color-123': When the buttons are hovered, they change color.
+            'ml-4': Margin left so add some space between the buttons.-->
+
+            <!-- Download button is made with a anchor tag, in order to utilize the 'download' attribute. 
+            'download': This attribute is made specificly for anchor tags. It allows you to specify that the target file should be downloaded when the user clicks the "button".  -->
+            <a id="download-button" class="px-4 py-2 bg-green-600 text-white font-bold rounded hover:bg-green-700" download>Download Workout Plan</a>
+            
+            <button id="restart-buttons" class="px-4 py-2 ml-4 bg-gray-500 text-white font-bold rounded hover:bg-gray-600">Restart</button>
+
+        </div>
+    </div>
+
+    <!-- Link to the JavaScript file, called using the 'static' tag to ensure the correct path is used. -->
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>

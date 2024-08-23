@@ -41,10 +41,6 @@
     display: none;
 }
 
-#selection-container {
-    padding-top: 50px;
-}
-
 /* Center the entire workout and difficulty container */
 .workout-difficulty-container {
     display: flex;
