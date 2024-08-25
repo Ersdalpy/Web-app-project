@@ -1,32 +1,34 @@
-/* Base workout option styles */
+/* Styling the class workout-option */
 .workout-option {
-    transition: all 0.5s ease;
-    position: relative;
+    transition: all 0.5s ease; /* Transition for hover effect */
+    position: relative; /* Setting the position to relative so that the image can be positioned absolutely */
     width: 300px; /* Fixed width for all screens */
     height: 500px; /* Fixed height for large screens */
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    opacity: 0.85;
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Hide any overflowing content */
+    opacity: 0.85; /* Setting the opacity of the workout option divs to 85% */
 }
 
+/* Hover effect for elements with the .workout-option class */
 .workout-option:hover {
-    opacity: 1.0;
+    opacity: 1.0; /* Setting the opacity of the workout option divs to 100% when hovered */
 }
 
 /* Hover effect for elements with the .hover-scale class */
 .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Scale up the image by 5% when hovered */
 }
 
+/* Styling the images included in the .workout-option */
 .workout-option img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Set the width to 100% */
+    height: 100%; /* Set the height to 100% */
+    object-fit: cover; /* Scale the image to cover the entire div */
 }
 
+/* Styling the h2 element included in the .workout-option */
 .workout-option h2 {
-    position: absolute;
+    position: absolute; /* Position the text absolutely, making it relative to the image */
     bottom: 0;
     width: 100%;
     background-color: rgba(1, 65, 30, 0.2);
@@ -38,78 +40,84 @@
 
 /* Hidden class to remove other workout options */
 .hidden {
-    display: none;
+    display: none; /* Elements with the .hidden class will display nothing, in other words, they will be hidden */
 }
 
 /* Center the entire workout and difficulty container */
 .workout-difficulty-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Use flexbox, which makes it easier to align elements */
+    flex-direction: row; /* Specifying the direction of which to align elements */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     gap: 50px; /* Space between workout and difficulty sections */
-    position: relative;
+    position: relative; /* Setting the position to relative so that the buttons can be positioned absolutely */
 }
 
+/* Styling the difficulty options */
 .difficulty-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center vertically */
-    position: absolute;
+    display: flex; /* Use flexbox, which makes it easier to align elements */
+    flex-direction: column; /* Specifying the direction of which to align elements */
+    justify-content: center; /* Center horizontally */
+    position: absolute; /* Positioning the button absolutely */
     top: 50%; /* Center vertically */
     transform: translateY(-50%); /* Translate to perfect center */
 }
 
+/* Styling the difficulty buttons */
 .difficulty-option {
-    background-color: #f8f8f8;
-    width: 200px;
-    height: 40px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-bottom: 10px;
-    color: white;
-    font-weight:500;
+    width: 200px; /* Fixed width for large screens */
+    height: 40px; /* Fixed height for large screens */
+    border-radius: 12px; /* Rounded corners */
+    display: flex; /* Use flexbox, which makes it easier to align elements */
+    flex-direction: row; /* Specifying the direction of which to align elements */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Transition for button hover effect */
+    margin-bottom: 10px; /* Bottom margin, for spacing between buttons */
+    color: white; /* White text */
+    font-weight:500; /* Semibold text */
 }
 
+/* Target the buttons with the .difficulty-option class and give them a different background color */
 .difficulty-option:nth-child(1) {
-    background-color: rgba(192, 250, 192, 0.9);
+    background-color: rgba(192, 250, 192, 0.9); /* Light green */
 }
 
 .difficulty-option:nth-child(2) {
-    background-color: rgba(220, 240, 148, 0.9);
+    background-color: rgba(220, 240, 148, 0.9); /* Light yellow */
 }
 
 .difficulty-option:nth-child(3) {
-    background-color: rgba(226, 141, 141, 0.9);
+    background-color: rgba(226, 141, 141, 0.9); /* Light red */
 }
 
-
-/* Layout for small screens */
+/* Layout for small screens less than 767 pixels of width */
 @media (max-width: 767px) {
+
+    /* Styling the workout options for small screens */
     .workout-option {
-        width: 100%;
-        height: 150px;
-        margin: 10px 0;
+        width: 100%; /* Set the width to 100% */
+        height: 150px; /* Set the height to 150px */
+        margin: 10px; /* Add some margin between the workout options */
     }
 
+    /* Styling the difficulty options for small screens */
     .workout-difficulty-container {
-        flex-direction: column;
+        flex-direction: column; /* Change direction from row to column for small screens */
     }
 
+    /* Styling the difficulty buttons for small screens */
     .difficulty-container {
         flex-direction: row; /* Change to row for mobile view */
         justify-content: center; /* Center the difficulty buttons */
         gap: 10px; /* Space between buttons */
-        width: 100%; /* Ensure container takes full width */
+        width: 90%; /* Forcing the buttons to take up 90% of the width */
     }
 
+    /* Styling the difficulty buttons for small screens */
     .difficulty-option {
-        width: 100%;
-        height: 50px;
+        width: 100%; /* Set the width to 100% */
+        height: 50px; /* Set the height to 50px */
     }
 }
