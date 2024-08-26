@@ -29,13 +29,13 @@
 /* Styling the h2 element included in the .workout-option */
 .workout-option h2 {
     position: absolute; /* Position the text absolutely, making it relative to the image */
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(1, 65, 30, 0.2);
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-    margin: 0;
+    bottom: 0; /* Position the text at the bottom of the image */
+    width: 100%; /* Set the width to 100% */
+    background-color: rgba(1, 65, 30, 0.2); /* Semi-transparent background color */
+    color: white; /* White text color */
+    text-align: center; /* Center the text */
+    padding: 0.5rem; /* Add some padding to the text */
+    margin: 0; /* Remove the default margin */
 }
 
 /* Hidden class to remove other workout options */
@@ -46,6 +46,7 @@
 /* Center the entire workout and difficulty container */
 .workout-difficulty-container {
     display: flex; /* Use flexbox, which makes it easier to align elements */
+    flex-wrap: wrap; /* Wrap the elements, so that they don't overflow */
     flex-direction: row; /* Specifying the direction of which to align elements */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -97,22 +98,29 @@
 
     /* Styling the workout options for small screens */
     .workout-option {
+        position: relative; /* Position the div absolutely */
         width: 100%; /* Set the width to 100% */
         height: 150px; /* Set the height to 150px */
-        margin: 10px; /* Add some margin between the workout options */
+        margin: 10px auto; /* Add some margin between the workout options */
     }
 
     /* Styling the difficulty options for small screens */
     .workout-difficulty-container {
         flex-direction: column; /* Change direction from row to column for small screens */
+        align-items: center; /* Center vertically */
     }
 
     /* Styling the difficulty buttons for small screens */
     .difficulty-container {
+        position: relative; /* Position the button absolutely */
         flex-direction: row; /* Change to row for mobile view */
-        justify-content: center; /* Center the difficulty buttons */
+        justify-content: center; /* Center the difficulty buttons horizontally */
+        align-items: center; /* Center the difficulty buttons vertically */
         gap: 10px; /* Space between buttons */
-        width: 90%; /* Forcing the buttons to take up 90% of the width */
+        width: 100%; /* Forcing the buttons to take up 100% of the width */
+        margin: 0 auto; /* Add some margin between the buttons */
+        top: 0; /* Position the button at the top of the container */
+        transform: none; /* Reset the transformation */
     }
 
     /* Styling the difficulty buttons for small screens */
