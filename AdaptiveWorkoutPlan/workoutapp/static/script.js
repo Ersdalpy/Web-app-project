@@ -106,10 +106,9 @@ function handleIntensitySelection(workoutType, intensity) {
             resultSection.classList.remove('hidden');
             // Variable downloadButton that fetches the information of the button with id 'download-button'.
             const downloadButton = document.getElementById('download-button');
-            // This variable stores the name of the file that will be downloaded.
-            const fileName = `${intensity}_${workoutType.replace(/\s/g, '')}_Workout.pdf`;
-            // If the downloadButton exists, we set the 'href' attribute to the correct URL.
-            downloadButton === null || downloadButton === void 0 ? void 0 : downloadButton.setAttribute('href', `${window.location.origin}/static/plans/${fileName}`);
+            // Generate download link using Django view path
+            const downloadUrl = `${window.location.origin}/download/${workoutType}/${intensity}/`;
+            downloadButton === null || downloadButton === void 0 ? void 0 : downloadButton.setAttribute('href', downloadUrl);
         }
     }
 }
