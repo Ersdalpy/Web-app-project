@@ -53,6 +53,14 @@ function handleWorkoutSelection(event) {
         selectionContainer.appendChild(workoutDifficultyContainer);
     }
 }
+// Function to show the trainer info after a delay
+function showTrainerInfo() {
+    const trainerInfo = document.getElementById('personalized-trainer');
+    if (trainerInfo) {
+        trainerInfo.classList.remove('hidden');
+        trainerInfo.style.display = 'block'; // Ensure it's displayed
+    }
+}
 // Making the function to handle intensity selection. Specifying that the arguments must be strings.
 function handleIntensitySelection(workoutType, intensity) {
     // A variable that fetches the information of the div with id 'selection-container'.
@@ -109,7 +117,19 @@ function handleIntensitySelection(workoutType, intensity) {
             // Generate download link using Django view path
             const downloadUrl = `${window.location.origin}/download/${workoutType}/${intensity}/`;
             downloadButton === null || downloadButton === void 0 ? void 0 : downloadButton.setAttribute('href', downloadUrl);
+            // After showing the result section, wait 4 seconds and then show trainer info
+            setTimeout(showTrainerInfo, 4000);
         }
+        updateIntensity(intensity);
+    }
+}
+function updateIntensity(intensity) {
+    const contactInfo = document.getElementById('contact-info');
+    if (contactInfo) {
+        // Lowercase the intensity
+        const lowerCaseIntensity = intensity.toLowerCase();
+        // Add the lowercase intensity to the contact information
+        contactInfo.innerHTML = `Questions about your ${lowerCaseIntensity} workout plan or want to take your training to the next level?<br><br>Get in contact:<br>trainer-bob@adaptiveworkoutplan.com`;
     }
 }
 // Here we are targeting all the divs with the class name 'workout-option'.

@@ -1,3 +1,7 @@
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adds a subtle black shadow */
+}
+
 /* Styling the class workout-option */
 .workout-option {
     transition: all 0.5s ease; /* Transition for hover effect */
@@ -91,6 +95,91 @@
 
 .difficulty-option:nth-child(3) {
     background-color: rgba(226, 141, 141, 0.9); /* Light red */
+}
+
+/* Personalized Trainer Info */
+.trainer-info {
+    display: none; /* Hide initially */
+    text-align: left; /* Align text to the left */
+    animation: fadeIn 2s ease-in-out forwards; /* Animation for fade-in effect */
+    max-width: 400px; /* Limit the width of the content */
+    padding: 20px; /* Add padding for spacing around text and picture */
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly visible white background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+    /* Centering with Flexbox */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto; /* Center horizontally */
+}
+
+.trainer-info img {
+    width: 50px; /* Set a smaller width for the image */
+    align-self: flex-end; /* Align image to the right */
+}
+
+/* Ensuring the personal trainer image is on the right of the text */
+.trainer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distributes space between elements */
+}
+
+.trainer-content p {
+    margin-right: 20px; /* Adds space between text and image */
+}
+
+/* Apply the animation to the download button */
+#download-button {
+    background-color: #4CAF50; /* Green */
+    opacity: 0.8;
+    animation: scaleButton 1s ease 1s 2; /* Apply the animation to the button with 1 second of duration, 1 second delay and 2 repeats */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+    display: inline-block; /*Ensures the button is displayed as an inline element*/
+}
+
+/* Stop the animation when the button is hovered */
+#download-button:hover {
+    animation-play-state: paused; /* Pause the animation */
+}
+
+#restart-buttons {
+    background-color: rgb(186, 186, 186);
+    opacity: 0.8;
+    scale: 0.9; /* Reduce the size of the button */
+}
+
+/* Styling the buttons on hover */
+.buttons:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.05); /* Scale the button up by 5% on hover */
+}
+
+/* Keyframe animation to scale the button up and down */
+@keyframes scaleButton {
+    0%, 100% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.04); /* Scaled up by 0.04 */
+    }
+}
+
+/* Keyframe animation for the fade-in effect of the personal trainer text and image */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#result {
+    margin-bottom: 20px; /* Add some margin at the bottom */
 }
 
 /* Layout for small screens less than 767 pixels of width */

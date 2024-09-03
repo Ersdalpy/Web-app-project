@@ -86,17 +86,24 @@
             
             <!-- Download button and Restart button.
             'px-4 py-2 rounded': Adds some padding to the buttons, and makes the corners rounded.
-            'bg-color-123': Background color of the buttons, low number equals light color, high number equals strong color.
             'text-white font-bold': White and bold text.
-            'hover: bg-color-123': When the buttons are hovered, they change color.
             'ml-4': Margin left so add some space between the buttons.-->
 
             <!-- Download button is made with a anchor tag, in order to utilize the 'download' attribute. 
             'download': This attribute is made specificly for anchor tags. It allows you to specify that the target file should be downloaded when the user clicks the "button".  -->
-            <a id="download-button" class="px-4 py-2 bg-green-600 text-white font-bold rounded hover:bg-green-700" download>Download Workout Plan</a>
+            <a id="download-button" class="buttons px-4 py-2  text-white font-bold rounded" download>Download Workout Plan</a>
             
-            <button id="restart-buttons" class="px-4 py-2 ml-4 bg-gray-500 text-white font-bold rounded hover:bg-gray-600">Restart</button>
+            <button id="restart-buttons" class="buttons px-4 py-2 ml-4 text-white font-bold rounded-lg">Restart</button>
 
+        </div>
+
+    </div>
+
+    <!-- Personalized Trainer Section -->
+    <div id="personalized-trainer" class="trainer-info hidden">
+        <div class="trainer-content">
+            <p id="contact-info">Questions about your {intensity} workout plan or want to take your training to the next level?<br><br>Get in contact:<br>trainer-bob@adaptiveworkoutplan.com</p>
+            <img src="{% static 'pictures/personal_trainer.jpg' %}" alt="Personal Trainer">
         </div>
     </div>
 
