@@ -41,7 +41,11 @@ For users familiar with Python, Django, and Git:
 
 1.  Clone the repository:
         git clone https://github.com/Ersdalpy/Web-app-project.git
-2.  cd "Web-app-project/AdaptiveWorkoutPlan"
+2.  Enter directory:
+        cd "Web-app-project/AdaptiveWorkoutPlan"
+        Alternatively:
+            cd "PasteYourPathHere"
+            or drag the folder into the terminal after typing cd and pressing Space.
 3.  Install dependencies:
         pip install -r requirements.txt
 4.  Set up the database:
